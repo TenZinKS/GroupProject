@@ -8,7 +8,8 @@ root.geometry("1920x1080")
 
 #BMI Function
 def bmi():
-    import bmicalculator as x
+    root.destroy()
+    import bmicalculator as bmi
 
 #For Background
 Bg = PhotoImage(file="background.png")
