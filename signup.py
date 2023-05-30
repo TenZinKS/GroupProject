@@ -8,10 +8,11 @@ pic_label = Label(root, image=bg)
 pic_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 frame=Frame(root, width=500, height=500, bg="white")
-frame.place(x=400, y=80 )
+frame.place(x=440, y=80 )
 
 Label(frame, text="SIGN UP", bg="white", fg="black", font=("Comic Sans MS", 36, "bold"), pady=40).grid(row=0, column=2)
-a = Label(frame, text="                                                ", bg="white", fg="black").grid(row=0, column=3)
+
+a = Label(frame, bg="white", fg="black").grid(row=0, column=0)
 
 fullname=Label(frame, text="                 Full Name: ", font=("Arial", 15), bg="white", fg="black", pady=5).grid(row=1, column=1)
 fullname_entry = Entry(frame, width=25, bg="white", fg="black").grid(row=1, column=2)
@@ -44,7 +45,7 @@ last_pill_entry = Entry(frame, width=25, bg="white", fg="black").grid(row=9, col
 signup=Button(frame,text="Register Now",fg="#a94da0",relief=RAISED, bg="white", pady=10)
 signup.grid(row=10,column=2)
 
-lol=Label(frame, text="                      ", pady=30, bg="white").grid(row=10, column=1)
+# lol=Label(frame, text="                      ", pady=30, bg="white").grid(row=10, column=1)
 
 
 root.mainloop()
