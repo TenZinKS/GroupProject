@@ -5,11 +5,6 @@ root.title("BMI Calculator")
 root.geometry("900x500")
 root.resizable(0,0)
 
-bg=PhotoImage(file="gradient.png")
-bg_label=Label(root,image=bg)
-bg_label.place(x=0,y=0,relwidth=1,relheight=1)
-
-
 # Function to calculate BMI
 def bmicalculate():
     bmi=int(weight_entry.get())/(int(height_entry.get())/100)**2
@@ -37,10 +32,8 @@ def back():
 # FRAMES FOR THE BMI CALCULATOR
 title_frame=Frame(root, bg="white")
 title_frame.pack()
-# logo_frame=LabelFrame(root,padx=200)
-# logo_frame.pack(side="ne")
 frame_wtht=Frame(root,bg="white")
-frame_wtht.place(x=90,y=80)
+frame_wtht.pack(fill=X, expand=True)
 
 # TEXT / QUESTIONS
 title = Label(title_frame, text="BMI CALCULATOR", font=("Lexend", 20, "bold", "underline"), bg="white", fg="black")
