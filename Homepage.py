@@ -137,7 +137,7 @@ clickflow.set("Not Selected")
 flow = Label(noteframe,text="Flow",font=("Helvetica",12,"bold"), bg="white", fg="black")
 flow.grid(row=15,column=0, pady=5)
 
-dropflow = OptionMenu(noteframe,clickmood,"NotSelected","Light","Medium","Heavy")
+dropflow = OptionMenu(noteframe,clickflow,"NotSelected","Light","Medium","Heavy")
 dropflow.grid(row=16,column=0, pady=5)
 
 #------------------------------------------------------------------------------------------------
