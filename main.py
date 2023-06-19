@@ -3,10 +3,15 @@ from tkinter import messagebox
 
 root=Tk()
 root.geometry("1920x1080")
+root.title("Periodसाथी")
 
-bg = PhotoImage(file="theme.png")
-bg_label = Label(root, image=bg)
-bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+#Frame
+login_frame = Frame(root, width=2000, height=1200, bg="white", pady=200)
+login_frame.pack(fill=X, expand=True, ipady=200)
+
+bg = PhotoImage(file="logo_whitebg.png")
+bg_label = Label(login_frame,image=bg, bd=0)
+bg_label.pack(side="left", padx=50)
 
 def click(event):
     usrnm.configure()
@@ -27,32 +32,36 @@ def logPress():
     global y
 
     if x=="Hello" and y=="123":
-        messagebox.showinfo("LogIn Successful")
+        print("Entering")
     else:
-        messagebox.showinfo("Incorrect Username or Password")
+        print("Incorrect")
+    root.destroy()
+    import Homepage as homepg
 
 # Function after signup is pressed
 def signpress():
     root.destroy()
     import signup as signin
 
-login_frame = Frame(root, width=500, height=500, bg="white")
-login_frame.place(x=750, y=200)
 
-wlcm = Label(login_frame, text="WELCOME", font=("Comic Sans MS", 30, "bold", "underline"), bg="white", fg="black")
+wlcm = Label(login_frame, text="WELCOME", font=("Helvetica", 50, "bold", "underline"), bg="white", fg="black")
 wlcm.pack(pady=20)
 
+# USERNAME
 usrnm = Entry(login_frame, width=40, bg="white", fg="black")
 usrnm.insert(INSERT, "Username")
-usrnm.pack(pady=30)
+usrnm.pack(pady=20, ipady=5)
 
-pw = Entry(login_frame, width=40, bg="white", fg="black")
+# PASSWORD
+pw = Entry(login_frame, width=40, bg="white", fg="black", show="*")
 pw.insert(INSERT, "Password")
-pw.pack()
+pw.pack(pady=20, ipady=5)
 
+# LOGIN BUTTON
 login_btn = Button(login_frame, width=15, text="LogIn", font=("Arial", 20, "bold"), fg="purple", command=logPress)
 login_btn.pack(pady=50)
 
+# SIGNUP BUTTON
 sgnup_btn = Button(login_frame, width=15, text="SignUp", font=("Arial", 20, "bold"), fg="purple", command=signpress)
 sgnup_btn.pack()
 
