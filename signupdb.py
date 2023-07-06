@@ -111,7 +111,7 @@ last_period_entry = DateEntry(innerframe, width=28, background="white", foregrou
 last_period_entry.grid(row=7, column=2, sticky="w", pady=15)
 
 pills_btn = Checkbutton(innerframe, bg="white", fg="black")
-pills_btn.grid(row=8, column=2, sticky="w", pady=5, padx=100)
+pills_btn.grid(row=8, column=2, sticky="w", pady=5, padx=120)
 
 pills_intake_entry = DateEntry(innerframe, width=28, background="white", foreground="black")
 pills_intake_entry.grid(row=9, column=2, sticky="w", pady=15)
