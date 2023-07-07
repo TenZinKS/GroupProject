@@ -3,35 +3,36 @@ from PIL import Image, ImageTk
 
 root = Tk()
 root.title("Do's and Dont's")
-root.geometry("1440x900")
+root.configure(bg='white')
 
-# Main Frame
-frame = Frame(root, bg="white", height=900, width=1440)
-frame.place(x=0,y=0)
+# Setting window geometry to full screen
+width= root.winfo_screenwidth()               
+height= root.winfo_screenheight()     
+
+root.geometry("%dx%d" % (width, height))
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Function for when HomePage button is clicked
 def returnhome():
     root.destroy()
     import Homepage as homeeeeee
 
-# LOGO
-logo_img = Image.open("logo_whitebg.png")
-resized = logo_img.resize((250,170),Image.LANCZOS)
-new_logo = ImageTk.PhotoImage(resized)
-logo_label = Label(frame,image=new_logo, bd=0)
-logo_label.place(x=1200, y=0)
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
-# TITLE
-title = Label(frame, text="DO'S AND DONT'S", font=("Helvatica", 40,"bold"),bg="white", fg="black")
-title.pack(side="top")
+# Main Frame
+frame = Frame(root, bg="white")
+frame.place(x=0,y=0)
 
 # FRAME FOR DO'S
 do_frame = LabelFrame(frame, bg="white", height=600, width=700)
-do_frame.pack(side="left", padx=10, pady=100)
+do_frame.pack(side="left", padx=40, pady=150)
 
 # FRAME FOR DONT'S
 dont_frame = LabelFrame(frame, bg="white", height=600, width=700)
-dont_frame.pack(side="right", padx=10, pady=100)
+dont_frame.pack(side="right", padx=50, pady=150)
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # TEXT IN DO FRAME
 do = Label(do_frame, text="Do:", font=("Comic Sans MS",32, "bold"),bg="white", fg="black")
@@ -65,6 +66,7 @@ personal_note = Text(do_frame,height=15,width=50, border=True, bg="white", fg="b
 personal_note.insert(INSERT, "Personal Note: ")
 personal_note.grid(row=9,column=0, pady=20)
 
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # TEXT IN DONT FRAME
 
@@ -96,8 +98,10 @@ personal__note = Text(dont_frame,height=15,width=50, border=True, bg="white", fg
 personal__note.insert(INSERT, "Personal Note: ")
 personal__note.grid(row=8,column=0, pady=23)
 
+# --------------------------------------------------------------------------------------------------------------------------------------------------
+
 # RETURN TO HOME BUTTON
-homee = Button(root, text="HomePage", bg="white", fg="purple", command=returnhome)
-homee.pack(side="bottom", pady=50)
+homee = Button(frame, text="HomePage", bg="white", fg="purple", font=('Arial',15,'bold'), command=returnhome, bd=0, height=2)
+homee.pack(side="bottom", pady=15)
 
 root.mainloop()
