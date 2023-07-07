@@ -5,7 +5,14 @@ import sqlite3
 
 root = Tk()
 root.title("SignUp")
-root.geometry("1700x1080")
+
+# Setting window geometry to full screen
+width= root.winfo_screenwidth()               
+height= root.winfo_screenheight()     
+
+root.geometry("%dx%d" % (width, height))
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Connecting database and creating cursor
 conn = sqlite3.connect("signup.db")
@@ -44,9 +51,7 @@ def submit():
     root.destroy()
     import main as hey
 
-# Title Label
-# title_label = Label(root, text="SIGN UP", bg="#db00af", fg="white", font=('Helvetica', 50, 'bold'))
-# title_label.pack(ipady=30, ipadx=1000)
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Creating frame for all the labels and entryboxes
 main_frame=Frame(root, width=1920, height=1080, bg="white",padx=150, pady=150)
@@ -55,7 +60,7 @@ main_frame.pack(fill=X, expand=True)
 innerframe=Frame(main_frame, bg="white")
 innerframe.pack()
 
-# Textbox labels
+# --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # User details
 name_label = Label(innerframe,text="Full Name: ", font=("Arial", 15), bg="white", fg="black")
@@ -88,7 +93,9 @@ pills.grid(row=8, column=0, sticky="w", pady=10)
 pills_intake = Label(innerframe, text="Your last pill intake: ", font=('Arial', 15), bg='white', fg='black')
 pills_intake.grid(row=9, column=0, sticky="w", pady=15)
 
-#creating entry boxes
+# --------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Creating entry boxes
 name=Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
 name.grid(row=1,column=2, sticky="w", pady=10)
 
@@ -116,15 +123,17 @@ pills_btn.grid(row=8, column=2, sticky="w", pady=5, padx=120)
 pills_intake_entry = DateEntry(innerframe, width=28, background="white", foreground="black")
 pills_intake_entry.grid(row=9, column=2, sticky="w", pady=15)
 
+# --------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Submit button
 register_btn = Button(innerframe,text="Register Now",font=('Arial',15,'bold'), command=submit, bg="white", fg="black")
-register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=30)
+register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=40)
 
 # For the bottom slogan
-pic_img = Image.open("mainslogan.png")
-resized = pic_img.resize((600,450),Image.LANCZOS)
+pic_img = Image.open("logo_slogan.png")
+resized = pic_img.resize((700, 450),Image.LANCZOS)
 new_logo = ImageTk.PhotoImage(resized)
 logo_label = Label(main_frame,image=new_logo, bd=0)
-logo_label.pack(side='bottom')
+logo_label.pack(side='bottom', ipady=20)
 
 root.mainloop()
