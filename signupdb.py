@@ -1,5 +1,5 @@
 from tkinter import*
-from tkinter import messagebox
+from PIL import ImageTk,Image
 from tkcalendar import DateEntry
 import sqlite3
 
@@ -12,14 +12,14 @@ conn = sqlite3.connect("signup.db")
 c = conn.cursor()
 
 # Data table
-c.execute(""" CREATE TABLE IF NOT EXISTS users(
-    Fullname TEXT,
-    Contact INTEGER,
-    Age INTEGER,
-    Email TEXT,
-    Password TEXT
-)""")
-conn.commit()
+# c.execute(""" CREATE TABLE IF NOT EXISTS users(
+#     Fullname TEXT,
+#     Contact INTEGER,
+#     Age INTEGER,
+#     Email TEXT,
+#     Password TEXT
+# )""")
+# conn.commit()
 
 def submit():
     fullname = name.get()
@@ -45,15 +45,15 @@ def submit():
     import main as hey
 
 # Title Label
-title_label = Label(root, text="SIGN UP", bg="#db00af", fg="white", font=('Helvetica', 50, 'bold'))
-title_label.pack(ipady=30, ipadx=1000)
+# title_label = Label(root, text="SIGN UP", bg="#db00af", fg="white", font=('Helvetica', 50, 'bold'))
+# title_label.pack(ipady=30, ipadx=1000)
 
 # Creating frame for all the labels and entryboxes
 main_frame=Frame(root, width=1920, height=1080, bg="white",padx=150, pady=150)
 main_frame.pack(fill=X, expand=True)
 
 innerframe=Frame(main_frame, bg="white")
-innerframe.pack(ipady=50)
+innerframe.pack()
 
 # Textbox labels
 
@@ -118,6 +118,13 @@ pills_intake_entry.grid(row=9, column=2, sticky="w", pady=15)
 
 # Submit button
 register_btn = Button(innerframe,text="Register Now",font=('Arial',15,'bold'), command=submit, bg="white", fg="black")
-register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=20)
+register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=30)
+
+# For the bottom slogan
+pic_img = Image.open("mainslogan.png")
+resized = pic_img.resize((600,450),Image.LANCZOS)
+new_logo = ImageTk.PhotoImage(resized)
+logo_label = Label(main_frame,image=new_logo, bd=0)
+logo_label.pack(side='bottom')
 
 root.mainloop()
