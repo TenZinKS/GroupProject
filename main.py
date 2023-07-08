@@ -1,9 +1,11 @@
 from tkinter import *
 from tkinter import messagebox
+from PIL import ImageTk,Image
 import sqlite3
 
 root=Tk()
 root.title("Periodसाथी")
+root.configure(bg='white')
 
 # Setting window geometry to full screen
 width= root.winfo_screenwidth()               
@@ -67,38 +69,40 @@ def signpress():
 login_frame = Frame(root, width=2000, height=1200, bg="white", pady=200)
 login_frame.pack(fill=X, expand=True, ipady=200)
 
-bg = PhotoImage(file="logo_whitebg.png")
-bg_label = Label(login_frame,image=bg, bd=0)
-bg_label.pack(side="left", padx=50)
+logo = Image.open("logoo.png")
+resized = logo.resize((600,600),Image.LANCZOS)
+new_logo = ImageTk.PhotoImage(resized)
+logo_label = Label(login_frame,image=new_logo, bd=0)
+logo_label.pack(side='left', padx=150)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 wlcm = Label(login_frame, text="WELCOME", font=("Helvetica", 50, "bold", "underline"), bg="white", fg="black")
-wlcm.pack(pady=20)
+wlcm.pack(pady=30)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # USERNAME
-usrnm = Entry(login_frame, width=40, bg="white", fg="black")
+usrnm = Entry(login_frame, width=40, bg="white", fg="black", font=('Arial', 15))
 usrnm.insert(INSERT, "Username/ email")
-usrnm.pack(pady=20, ipady=5)
+usrnm.pack(pady=40, ipady=10)
 
 # PASSWORD
-pw = Entry(login_frame, width=40, bg="white", fg="black", show="*")
+pw = Entry(login_frame, width=40, bg="white", fg="black", show="*", font=('Arial', 15))
 pw.insert(INSERT, "Password")
-pw.pack(pady=20, ipady=5)
+pw.pack(pady=20, ipady=10)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 #BUTTONS:
 
 # LOGIN BUTTON
-login_btn = Button(login_frame, width=15, text="LogIn", font=("Arial", 20, "bold"), fg="purple", command=goin)
-login_btn.pack(pady=50)
+login_btn = Button(login_frame, width=10, text="LogIn", font=("Arial", 20, "bold"), fg="purple", command=goin)
+login_btn.pack(pady=50, ipady=5)
 
 # SIGNUP BUTTON
-sgnup_btn = Button(login_frame, width=15, text="SignUp", font=("Arial", 20, "bold"), fg="purple", command=signpress)
-sgnup_btn.pack()
+sgnup_btn = Button(login_frame, width=10, text="SignUp", font=("Arial", 20, "bold"), fg="purple", command=signpress)
+sgnup_btn.pack(ipady=5)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
