@@ -61,7 +61,7 @@ def logPress():
 # Function after signup is pressed
 def signpress():
     root.destroy()
-    import signup as signin
+    import signupdb as signin
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
