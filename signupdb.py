@@ -49,7 +49,7 @@ def submit():
     pw.delete(0,END)
 
     root.destroy()
-    import main as login
+    import loginpage as login
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -82,17 +82,6 @@ pw_label.grid(row=5,column=0, sticky="w", pady=25)
 confirm_pw = Label(innerframe, text="Confirm password: ", font=("Arial", 15), bg="white", fg="black")
 confirm_pw.grid(row=6, column=0, sticky="w")
 
-# Last period
-last_period = Label(innerframe, text="Your last period: ", font=("Arial", 15), bg="white", fg="black")
-last_period.grid(row=7, column=0, sticky="w", pady=15)
-
-# Pills instake
-pills = Label(innerframe, text="Do you take pills? ", font=("Arial", 15), bg="white", fg="black")
-pills.grid(row=8, column=0, sticky="w", pady=10)
-
-pills_intake = Label(innerframe, text="Your last pill intake: ", font=('Arial', 15), bg='white', fg='black')
-pills_intake.grid(row=9, column=0, sticky="w", pady=15)
-
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Creating entry boxes
@@ -114,20 +103,11 @@ pw.grid(row=5,column=2, sticky="w", pady=25)
 confirm_pw_entry = Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
 confirm_pw_entry.grid(row=6,column=2, sticky="w")
 
-last_period_entry = DateEntry(innerframe, width=28, background="white", foreground="black")
-last_period_entry.grid(row=7, column=2, sticky="w", pady=15)
-
-pills_btn = Checkbutton(innerframe, bg="white", fg="black")
-pills_btn.grid(row=8, column=2, sticky="w", pady=5, padx=120)
-
-pills_intake_entry = DateEntry(innerframe, width=28, background="white", foreground="black")
-pills_intake_entry.grid(row=9, column=2, sticky="w", pady=15)
-
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Submit button
 register_btn = Button(innerframe,text="Register Now",font=('Arial',15,'bold'), command=submit, bg="white", fg="black")
-register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=40)
+register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=70)
 
 # For the bottom slogan
 pic_img = Image.open("logo_slogan.png")
