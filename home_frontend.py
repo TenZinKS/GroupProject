@@ -3,7 +3,7 @@ import home_backend
 from PIL import ImageTk,Image
 from tkcalendar import *
 from datetime import datetime,timedelta
- 
+
 root = Tk()
 root.iconbitmap("logo1.ico")
 root.title("HomePage")
@@ -53,14 +53,13 @@ def update_command():
 
 #BMI Function
 def bmi():
-    root.destroy()
     import bmicalculator as bmi
 
 
 # Function to go back to LogIn.
 def back():
     root.destroy()
-    import main as home
+    import loginpage as home
 
 
 def setdate():
@@ -109,7 +108,7 @@ ovul_period.pack()
 
 
 # For the logo Frame
-logo_img = Image.open("logo.png")
+logo_img = Image.open("logoo.png")
 resized = logo_img.resize((200,200),Image.LANCZOS)
 new_logo = ImageTk.PhotoImage(resized)
 logo_label = Label(logoframe,image=new_logo)
