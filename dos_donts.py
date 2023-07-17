@@ -2,7 +2,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 root = Tk()
-root.title("Do's and Dont's")
+root.title("Periodसाथी: Do's and Dont's")
 root.configure(bg='white')
 
 # Setting window geometry to full screen
@@ -16,7 +16,7 @@ root.geometry("%dx%d" % (width, height))
 # Function for when HomePage button is clicked
 def returnhome():
     root.destroy()
-    import Homepage as homeeeeee
+    import home_frontend as homeeeeee
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
