@@ -13,7 +13,20 @@ height= root.winfo_screenheight()
 
 root.geometry("%dx%d" % (width, height))
 
-# --------------------------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------
+
+# Function to hide and show password
+def show():
+    eyeimg.config(file='openeye.png')
+    pw.config(show="")
+    eyebutton.config(command=hide)
+
+def hide():
+    eyeimg.config(file='closeeye.png')
+    pw.config(show='*')
+    eyebutton.config(command=show)
+
+# --------------------------------------------------
 
 # Function to login
 def goin():
@@ -56,7 +69,7 @@ def click2(event):
 # Function when Login is Pressed
 def logPress():
     root.destroy()
-    import Homepage as homepg
+    import home_frontend as homepg
 
 # Function after signup is pressed
 def signpress():
@@ -90,19 +103,33 @@ usrnm.pack(pady=40, ipady=10)
 # PASSWORD
 pw = Entry(login_frame, width=40, bg="white", fg="black", show="*", font=('Arial', 15))
 pw.insert(INSERT, "Password")
-pw.pack(pady=20, ipady=10)
+pw.pack(ipady=10)
+
+eyeimg =  PhotoImage(file='openeye.png')
+eyebutton = Button(login_frame, image=eyeimg, bd=0, bg='white',activebackground='white',cursor='hand2', command=hide)
+eyebutton.place(x=1600,y=280)
+
+# remember me button   
+remember = Checkbutton(login_frame, text='Remember Me',background='white')
+remember.pack()
+
+# Forget Button
+forgotbutton = Button(login_frame, text="Forgot Password?", bd=0, bg='white',activebackground='white', cursor='hand2', font=('Arial', 12, 'bold'))
+forgotbutton.pack()
+
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 #BUTTONS:
 
 # LOGIN BUTTON
-login_btn = Button(login_frame, width=10, text="LogIn", font=("Arial", 20, "bold"), fg="purple", command=goin)
-login_btn.pack(pady=50, ipady=5)
+login_btn = Button(login_frame, width=10, text="LogIn", font=("Arial", 20, "bold"), fg="purple",bd=5, command=goin)
+login_btn.pack(pady=50, ipady=2)
 
 # SIGNUP BUTTON
-sgnup_btn = Button(login_frame, width=10, text="SignUp", font=("Arial", 20, "bold"), fg="purple", command=signpress)
-sgnup_btn.pack(ipady=5)
+sgnup_btn = Button(login_frame, width=10, text="SignUp", font=("Arial", 20, "bold"), fg="purple",bd=5, command=signpress)
+sgnup_btn.pack(ipady=2)
+
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
