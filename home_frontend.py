@@ -73,6 +73,8 @@ def back():
     root.destroy()
     import loginpage as home
 
+def helpp():
+    import help_and_support as gotohelp
 
 def setdate():
     start_date = cal.get_date()  #Taking the entry from the entrywidget
@@ -101,7 +103,7 @@ sloganframe = Frame(root,bg="white")
 calendarframe.pack(side="left",fill='both',expand=True)
 noteframe.pack(side="left", fill=Y)
 logoframe.pack(ipadx=15)
-menuframe.pack(ipadx=80, ipady=100)
+menuframe.pack(ipadx=80, ipady=40)
 sloganframe.pack(ipadx=20)
 
 # ------------------------------------------------------------------------------------------------------------------------------
@@ -246,8 +248,11 @@ workout.configure(height=2, width=10)
 doanddont = Button(menuframe,text="Do's & Dont's")
 doanddont.configure(height=2, width=10)
 
-help = Button(menuframe,text="Help & Support")
+help = Button(menuframe,text="Help & Support", command=helpp)
 help.configure(height=2, width=10)
+
+gotologin = Button(menuframe, text="Login Menu", command=back)
+gotologin.configure(height=2, width=10)
 
 # Menu Placement
 menu_txt.pack(pady=40)
@@ -255,6 +260,7 @@ bmicalc.pack(pady=20)
 workout.pack(pady=20)
 doanddont.pack(pady=20)
 help.pack(pady=20)
+gotologin.pack(pady=20)
 
 # ------------------------------------------------------------------------------------------------------------------------------
 
