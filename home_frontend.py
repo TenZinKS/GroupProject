@@ -63,6 +63,11 @@ def delete_command():
 def update_command():
     home_backend.update(selected_tuple[0],clickspotting.get(),clickfluid.get(),clicksex.get(),clicktemp.get(),clickpain.get(),clickpill.get(),clickmood.get())
 
+#Function to create a reminder
+def create_reminder():
+    root.destroy()
+    import reminder as rem
+
 #BMI Function
 def bmi():
     root.destory()
@@ -97,7 +102,7 @@ noteframe = LabelFrame(root,font=("Helvetica",15,"bold"), bg="white")
 
 logoframe = Frame(root,bg="white")
 
-menuframe= LabelFrame(root,bg="white", bd=0)
+menuframe= LabelFrame(root,bg="white", bd=2)
 
 sloganframe = Frame(root,bg="white")
 
@@ -219,7 +224,7 @@ history = Label(noteframe,text="History",font=("Helvetica",20,"bold"), bg="white
 history.pack()
 
 history_list = Listbox(noteframe,height=18,width=50, bg="white", fg="black")
-history_list.pack(pady=30)
+history_list.pack(pady=25)
 
 history_list.bind('<<ListboxSelect>>',get_selected_row)
 
@@ -228,7 +233,6 @@ view.pack(side="left", padx=10, pady=10)
 
 delete_btn = Button(noteframe,height=3,text="Delete Selected",font=("Helvetica",13,"bold"),command = delete_command, bg="white", fg="black")
 delete_btn.pack(side="left", padx=10, pady=10)
-
 
 update_btn = Button(noteframe,height=3,text="Update Selected",font=("Helvetica",13,"bold"),command = update_command, bg="white", fg="black")
 update_btn.pack(side="left", padx=10, pady=10)
@@ -242,22 +246,26 @@ menu_txt = Label(menuframe, text="MENU", bg='white', fg='black')
 menu_txt.configure(font=("Helvetica", 20, "bold"))
 
 bmicalc = Button(menuframe,text="BMI Calculator",command = bmi)
-bmicalc.configure(height=2, width=10)
+bmicalc.configure(height=2, width=20)
 
 workout = Button(menuframe,text="WorkOut")
-workout.configure(height=2, width=10)
+workout.configure(height=2, width=20)
 
 doanddont = Button(menuframe,text="Do's & Dont's")
-doanddont.configure(height=2, width=10)
+doanddont.configure(height=2, width=20)
 
 help = Button(menuframe,text="Help & Support", command=helpp)
-help.configure(height=2, width=10)
+help.configure(height=2, width=20)
+
+remind = Button(menuframe,text="Create Reminder",command=create_reminder)
+remind.configure(height=2,width=20)
 
 gotologin = Button(menuframe, text="Login Menu", command=back)
-gotologin.configure(height=2, width=10)
+gotologin.configure(height=2, width=20)
 
 # Menu Placement
 menu_txt.pack(pady=40)
+remind.pack(pady=20)
 bmicalc.pack(pady=20)
 workout.pack(pady=20)
 doanddont.pack(pady=20)
