@@ -79,43 +79,47 @@ def signpress():
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Frame
-login_frame = Frame(root, width=2000, height=1200, bg="white", pady=200)
-login_frame.pack(fill=X, expand=True, ipady=200)
+login_frame = Frame(root, bg="white")
+login_frame.pack(side='right',padx=150, pady=100)
 
 logo = Image.open("logoo.png")
 resized = logo.resize((600,600),Image.LANCZOS)
 new_logo = ImageTk.PhotoImage(resized)
-logo_label = Label(login_frame,image=new_logo, bd=0)
-logo_label.pack(side='left', padx=150)
+logo_label = Label(root,image=new_logo, bd=0)
+logo_label.pack(side='left', padx=100)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
-wlcm = Label(login_frame, text="WELCOME", font=("Helvetica", 50, "bold", "underline"), bg="white", fg="black")
-wlcm.pack(pady=30)
+wlcm = Label(login_frame, text="WELCOME", font=("Helvetica", 50, "bold"), bg="white", fg="black")
+wlcm.grid(row=0,column=1, pady=70)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # USERNAME
-usrnm = Entry(login_frame, width=40, bg="white", fg="black", font=('Arial', 15))
+usrnm = Entry(login_frame)
+usrnm.configure(width=40, bg="white", fg="grey", font=('AppleGothic', 15), bd=0)
 usrnm.insert(INSERT, "Username/ email")
-usrnm.pack(pady=40, ipady=10)
+usrnm.grid(row=1, column=1, pady=10, ipady=10)
 
 # PASSWORD
-pw = Entry(login_frame, width=40, bg="white", fg="black", show="*", font=('Arial', 15))
+pw = Entry(login_frame)
+pw.configure(width=40, bg="white", fg="grey", show="*", font=('AppleGothic', 15))
 pw.insert(INSERT, "Password")
-pw.pack(ipady=10)
+pw.grid(row=2, column=1, pady=20, ipady=8)
 
 eyeimg =  PhotoImage(file='openeye.png')
 eyebutton = Button(login_frame, image=eyeimg, bd=0, bg='white',activebackground='white',cursor='hand2', command=hide)
-eyebutton.place(x=1600,y=280)
+eyebutton.grid(row=2, column=2, padx=10)
 
-# remember me button   
-remember = Checkbutton(login_frame, text='Remember Me',background='white')
-remember.pack()
+# Remember me button   
+remember = Checkbutton(login_frame)
+remember.configure(text='Remember Me',background='white', font=('AppleGothic', 15))
+remember.grid(row=4, column=0)
 
 # Forget Button
-forgotbutton = Button(login_frame, text="Forgot Password?", bd=0, bg='white',activebackground='white', cursor='hand2', font=('Arial', 12, 'bold'))
-forgotbutton.pack()
+forgotbutton = Button(login_frame)
+forgotbutton.configure(text="Forgot Password?", bd=0, bg='white',activebackground='white', cursor='hand2', font=('AppleGothic', 12, 'bold'))
+forgotbutton.grid(row=4, column=1, pady=15)
 
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -123,14 +127,14 @@ forgotbutton.pack()
 #BUTTONS:
 
 # LOGIN BUTTON
-login_btn = Button(login_frame, width=10, text="LogIn", font=("Arial", 20, "bold"), fg="purple",bd=5, command=goin)
-login_btn.pack(pady=50, ipady=2)
+login_btn = Button(login_frame)
+login_btn.configure(height=1,width=10, text="LogIn", font=("AppleGothic", 20, "bold"),bg='white', fg="#AE239F",bd=0, command=goin)
+login_btn.grid(row=5, column=1, pady=30)
 
 # SIGNUP BUTTON
-sgnup_btn = Button(login_frame, width=10, text="SignUp", font=("Arial", 20, "bold"), fg="purple",bd=5, command=signpress)
-sgnup_btn.pack(ipady=2)
-
-
+sgnup_btn = Button(login_frame)
+sgnup_btn.configure(height=1,width=10, text="SignUp", font=("AppleGothic", 20, "bold"),bg='white', fg="#AE239F",bd=0, command=signpress)
+sgnup_btn.grid(row=6, column=1, pady=20)
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # When Username entry box is clicked
