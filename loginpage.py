@@ -80,7 +80,7 @@ def signpress():
 
 # Frame
 login_frame = Frame(root, bg="white")
-login_frame.pack(side='right',padx=150, pady=100)
+login_frame.pack(side='right',padx=170, pady=100)
 
 logo = Image.open("logoo.png")
 resized = logo.resize((600,600),Image.LANCZOS)
