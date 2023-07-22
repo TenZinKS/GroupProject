@@ -1,4 +1,5 @@
 from tkinter import *
+from PIL import ImageTk,Image
 from tkinter import messagebox
 import time
 from plyer import notification
@@ -10,6 +11,9 @@ root.resizable(0,0)
 root.geometry("500x500")
 root.iconbitmap("bell.ico")
 
+def back():
+    root.destroy()
+    import home_frontend
 
 def get_details():
     """
@@ -68,12 +72,23 @@ suffix.grid(row=3,column=3,ipady=10)
 
 # Buttons
 create_reminder = Button(root,text="Create Reminder",command=get_details)
-create_reminder.grid(row=4,column=4,padx=20)
+create_reminder.grid(row=5,column=4,padx=20)
 
 clear = Button(root,text="Clear",command=delete)
-clear.grid(row=4,column=0,padx=10)
+clear.grid(row=5,column=1,columnspan=2,padx=10)
 
+go_back = Button(text="Back",command=back)
+go_back.grid(row=5,column=0,padx=10)
 
+# For the image.
+slogan_img = Image.open("logo_slogan.png")
+
+resized = slogan_img.resize((400,200),Image.LANCZOS)
+
+new_slogan = ImageTk.PhotoImage(resized)
+
+slogan_label = Label(image=new_slogan, bg='white')
+slogan_label.grid(row=6,columnspan=6,padx=40,pady=20)
 
 root.mainloop()
 
