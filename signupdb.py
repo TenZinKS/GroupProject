@@ -63,50 +63,50 @@ innerframe.pack()
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # User details
-name_label = Label(innerframe,text="Full Name: ", font=("Arial", 15), bg="white", fg="black")
+name_label = Label(innerframe,text="Full Name: ", font=("AppleGothic", 15), bg="white", fg="black")
 name_label.grid(row=1,column=0, sticky="w", pady=10)
 
-cont_label = Label(innerframe,text="Contact Number: ", font=("Arial", 15), bg="white", fg="black")
+cont_label = Label(innerframe,text="Contact Number: ", font=("AppleGothic", 15), bg="white", fg="black")
 cont_label.grid(row=2,column=0, sticky="w", pady=10)
 
-age_label = Label(innerframe,text="Age: ", bg="white", font=("Arial", 15), fg="black")
+age_label = Label(innerframe,text="Age: ", bg="white", font=("AppleGothic", 15), fg="black")
 age_label.grid(row=3,column=0, sticky="w", pady=10)
 
-mail_label = Label(innerframe,text="Email Address: ", font=("Arial", 15), bg="white", fg="black")
+mail_label = Label(innerframe,text="Email Address: ", font=("AppleGothic", 15), bg="white", fg="black")
 mail_label.grid(row=4,column=0, sticky="w", pady=10)
 
 # Password Entries
-pw_label = Label(innerframe,text="New password: ", font=("Arial", 15), bg="white", fg="black")
+pw_label = Label(innerframe,text="New password: ", font=("AppleGothic", 15), bg="white", fg="black")
 pw_label.grid(row=5,column=0, sticky="w", pady=25)
 
-confirm_pw = Label(innerframe, text="Confirm password: ", font=("Arial", 15), bg="white", fg="black")
+confirm_pw = Label(innerframe, text="Confirm password: ", font=("AppleGothic", 15), bg="white", fg="black")
 confirm_pw.grid(row=6, column=0, sticky="w")
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Creating entry boxes
-name=Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
+name=Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
 name.grid(row=1,column=2, sticky="w", pady=10)
 
-cont = Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
+cont = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
 cont.grid(row=2,column=2, sticky="w", pady=10)
 
-age = Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
+age = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
 age.grid(row=3,column=2, sticky="w", pady=10)
 
-mail = Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
+mail = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
 mail.grid(row=4,column=2, sticky="w", pady=10)
 
-pw = Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
+pw = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
 pw.grid(row=5,column=2, sticky="w", pady=25)
 
-confirm_pw_entry = Entry(innerframe,width=30, font=("Arial", 15), bg="white", fg="black")
+confirm_pw_entry = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
 confirm_pw_entry.grid(row=6,column=2, sticky="w")
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Submit button
-register_btn = Button(innerframe,text="Register Now",font=('Arial',15,'bold'), command=submit, bg="white", fg="black")
+register_btn = Button(innerframe,text="Register Now",font=('AppleGothic',15,'bold'), command=submit, bg="white", fg="black")
 register_btn.grid(row=17,column=2,columnspan=2, ipady=10, ipadx=20, pady=70)
 
 # For the bottom slogan
