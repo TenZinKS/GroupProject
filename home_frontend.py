@@ -65,6 +65,7 @@ def update_command():
 
 #BMI Function
 def bmi():
+    root.destory()
     import bmicalculator as bmi
 
 
@@ -74,6 +75,7 @@ def back():
     import loginpage as home
 
 def helpp():
+    root.destroy()
     import help_and_support as gotohelp
 
 def setdate():
