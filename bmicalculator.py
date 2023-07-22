@@ -37,7 +37,7 @@ def height_click(event):
 # Function to go back to Homepage.
 def back():
     root.destroy()
-    import Homepage as home
+    import home_frontend as home
 
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
