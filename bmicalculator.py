@@ -22,6 +22,9 @@ def bmicalculate():
     result.configure(bg='white', fg='black', font=("Arial",18,"bold"))
     result.grid(row=3, column=1)
 
+def back():
+    root.destroy()
+    import home_frontend 
 
 # Creating Frame
 frame =Frame(root)
@@ -44,15 +47,22 @@ weight_entry.grid(row=0, column=1)
 height_entry = Entry(frame)
 height_entry.grid(row=1, column=1)
 
+# Button to go back
+back_btn = Button(frame,text="Back",command=back)
+back_btn.configure(bg='white', height=2, width=10, bd=2)
+back_btn.grid(row=2, column=0, pady=20)
+
 # Button to clear everything
 clear_btn = Button(frame, text="Clear", command=clear)
-clear_btn.configure(bg='white', height=2, width=5, bd=0)
-clear_btn.grid(row=2, column=0, pady=20)
+clear_btn.configure(bg='white', height=2, width=10, bd=2)
+clear_btn.grid(row=2, column=1, pady=20)
 
 # Button that calculates BMI
 calc_btn = Button(frame, text="Calculate", command=bmicalculate)
-calc_btn.configure(bg='white', height=2, width=5, bd=0)
-calc_btn.grid(row=2, column=1, pady=20)
+calc_btn.configure(bg='white', height=2, width=10, bd=2)
+calc_btn.grid(row=2, column=2, pady=20)
+
+
 
 # Your BMI Label
 result_label = Label(frame,text='Your BMI: ')
