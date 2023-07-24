@@ -13,7 +13,7 @@ height= root.winfo_screenheight()
 
 root.geometry("%dx%d" % (width, height))
 
-# ------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
 
 # Function to hide and show password
 def show():
@@ -26,12 +26,12 @@ def hide():
     pw.config(show='*')
     eyebutton.config(command=show)
 
-# --------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
 
 # Function to login
 def goin():
     '''
-    this function takes in username/ email data and functions according to the entered data
+    This function takes in username/ email data and functions according to the entered data
     '''
 
     # Getting form data
@@ -51,6 +51,13 @@ def goin():
       else:
        messagebox.showinfo("Error", "Wrong username or password\n Try again.")
 
+# --------------------------------------------------------------------------------------------------------------------------------------------------
+
+def update_pw():
+    '''
+    This function opens the window to update the users password when forgot password button is clicked.
+    '''
+    import updatepw as newpassword
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Function when Username is clicked
@@ -118,7 +125,7 @@ remember.grid(row=4, column=0)
 
 # Forget Button
 forgotbutton = Button(login_frame)
-forgotbutton.configure(text="Forgot Password?", bd=0, bg='white',activebackground='white', cursor='hand2', font=('AppleGothic', 12, 'bold'))
+forgotbutton.configure(text="Forgot Password?", bd=0, bg='white',activebackground='white', cursor='hand2', font=('AppleGothic', 12, 'bold'), command=update_pw)
 forgotbutton.grid(row=4, column=1, pady=15)
 
 
