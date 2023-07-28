@@ -70,7 +70,6 @@ def create_reminder():
 
 #BMI Function
 def bmi():
-    root.destory()
     import bmicalculator as bmi
 
 
@@ -102,7 +101,7 @@ noteframe = LabelFrame(root,font=("Helvetica",15,"bold"), bg="white")
 
 logoframe = Frame(root,bg="white")
 
-menuframe= LabelFrame(root,bg="white", bd=2)
+menuframe= LabelFrame(root,bg="white", bd=0)
 
 sloganframe = Frame(root,bg="white")
 
@@ -110,7 +109,7 @@ sloganframe = Frame(root,bg="white")
 calendarframe.pack(side="left",fill='both',expand=True)
 noteframe.pack(side="left", fill=Y)
 logoframe.pack(ipadx=15)
-menuframe.pack(ipadx=80, ipady=40)
+menuframe.pack(ipadx=60, ipady=40)
 sloganframe.pack(ipadx=20)
 
 # ------------------------------------------------------------------------------------------------------------------------------
@@ -248,9 +247,6 @@ menu_txt.configure(font=("Helvetica", 20, "bold"))
 bmicalc = Button(menuframe,text="BMI Calculator",command = bmi)
 bmicalc.configure(height=2, width=20)
 
-workout = Button(menuframe,text="WorkOut")
-workout.configure(height=2, width=20)
-
 doanddont = Button(menuframe,text="Do's & Dont's")
 doanddont.configure(height=2, width=20)
 
@@ -267,7 +263,6 @@ gotologin.configure(height=2, width=20)
 menu_txt.pack(pady=40)
 remind.pack(pady=20)
 bmicalc.pack(pady=20)
-workout.pack(pady=20)
 doanddont.pack(pady=20)
 help.pack(pady=20)
 gotologin.pack(pady=20)
