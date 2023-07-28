@@ -115,7 +115,7 @@ pw.insert(INSERT, "Password")
 pw.grid(row=2, column=1, pady=20, ipady=8)
 
 eyeimg =  PhotoImage(file='openeye.png')
-eyebutton = Button(login_frame, image=eyeimg, bd=0, bg='white',activebackground='white',cursor='hand2', command=hide)
+eyebutton = Button(login_frame, image=eyeimg, bd=0, bg='white',activebackground='white',cursor='hand2', command=show)
 eyebutton.grid(row=2, column=2, padx=10)
 
 # Remember me button   
