@@ -1,6 +1,5 @@
 from tkinter import*
 from PIL import ImageTk,Image
-from tkcalendar import DateEntry
 import sqlite3
 
 root = Tk()
@@ -53,6 +52,19 @@ def submit():
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Function to hide and show password
+def show():
+    eyeimg.config(file='openeye.png')
+    pw.config(show="")
+    eyebutton.config(command=hide)
+
+def hide():
+    eyeimg.config(file='closeeye.png')
+    pw.config(show='*')
+    eyebutton.config(command=show)
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Creating frame for all the labels and entryboxes
 main_frame=Frame(root, width=1920, height=1080, bg="white",padx=150, pady=150)
 main_frame.pack(fill=X, expand=True)
@@ -79,29 +91,27 @@ mail_label.grid(row=4,column=0, sticky="w", pady=10)
 pw_label = Label(innerframe,text="New password: ", font=("AppleGothic", 15), bg="white", fg="black")
 pw_label.grid(row=5,column=0, sticky="w", pady=25)
 
-confirm_pw = Label(innerframe, text="Confirm password: ", font=("AppleGothic", 15), bg="white", fg="black")
-confirm_pw.grid(row=6, column=0, sticky="w")
-
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Creating entry boxes
-name=Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
+name=Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="grey")
 name.grid(row=1,column=2, sticky="w", pady=10)
 
-cont = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
+cont = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="grey")
 cont.grid(row=2,column=2, sticky="w", pady=10)
 
-age = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
+age = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="grey")
 age.grid(row=3,column=2, sticky="w", pady=10)
 
-mail = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
+mail = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="grey")
 mail.grid(row=4,column=2, sticky="w", pady=10)
 
-pw = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
+pw = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="grey", show="*")
 pw.grid(row=5,column=2, sticky="w", pady=25)
 
-confirm_pw_entry = Entry(innerframe,width=30, font=("AppleGothic", 15), bg="white", fg="black")
-confirm_pw_entry.grid(row=6,column=2, sticky="w")
+eyeimg =  PhotoImage(file='openeye.png')
+eyebutton = Button(innerframe, image=eyeimg, bd=0, bg='white',activebackground='white',cursor='hand2', command=show)
+eyebutton.grid(row=5, column=3, padx=10)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
