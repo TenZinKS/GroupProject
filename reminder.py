@@ -7,6 +7,7 @@ from plyer import notification
 # To create a window
 root=Tk()
 root.title("Create Reminder")
+root.configure(bg='white')
 root.resizable(0,0)
 root.geometry("500x500")
 root.iconbitmap("bell.ico")
@@ -46,28 +47,28 @@ def delete():
         
 
 #Labels and Entryboxes
-title = Label(text="Create a Reminder",font=("Helvetica", 20, "bold"))
+title = Label(text="Create a Reminder",font=("Helvetica", 20, "bold"), bg='white', fg='black')
 title.grid(row=0,column=1,columnspan=5,ipady=20)
 
-set = Label(root,text="Set Title of the Reminder",font=("Helvetica", 10))
+set = Label(root,text="Set Title of the Reminder",font=("Helvetica", 10), bg='white', fg='black')
 set.grid(row=1,column=1,ipady=10)
 
 set_entry = Entry(root)
 set_entry.grid(row=1,column=2)
 
-set_alert = Label(root,text="Set Alert Message",font=("Helvetica", 10))
+set_alert = Label(root,text="Set Alert Message",font=("Helvetica", 10), bg='white', fg='black')
 set_alert.grid(row=2,column=1,ipady=10)
 
 set_alert_entry = Entry(root)
 set_alert_entry.grid(row=2,column=2)
 
-set_time = Label(root,text="Set Time",font=("Helvetica", 10))
+set_time = Label(root,text="Set Time",font=("Helvetica", 10), bg='white', fg='black')
 set_time.grid(row=3,column=1,ipady=10)
 
 set_time_entry = Entry(root)
 set_time_entry.grid(row=3,column=2)
 
-suffix = Label(root,text="(min)")
+suffix = Label(root,text="(min)", bg='white', fg='black')
 suffix.grid(row=3,column=3,ipady=10)
 
 # Buttons
