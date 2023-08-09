@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 root=Tk()
 root.title("Update Password")
 root.configure(bg='white')
-root.geometry("700x500")
+root.geometry("500x500")
 
 # ------------------------------------------------------------------------------------------------------------
 
@@ -71,11 +71,5 @@ new_pw_entry.grid(row=2, column=1, pady=5)
 update_btn = Button(root, command=update)
 update_btn.configure(bg='white', fg='black', text='Update Password', font=("AppleGothic",14,"bold"))
 update_btn.grid(row=3, column=1, pady=10)
-
-pic_img = Image.open("logo_slogan.png")
-resized = pic_img.resize((400, 250),Image.LANCZOS)
-new_logo = ImageTk.PhotoImage(resized)
-logo_label = Label(photoframe,image=new_logo, bd=0)
-logo_label.pack(side='bottom')
 
 root.mainloop()
