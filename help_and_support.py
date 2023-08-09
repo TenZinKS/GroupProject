@@ -36,7 +36,7 @@ text_1 = Label(frame, text="Getting Started : ", font=("Arial", 20, "bold", "und
 text_1.grid(row=2, column=0, sticky="w")
 
 text_2 = Label(frame,
-               text="Upon opening the app, you'll be prompted to set up your profile. Input your name, age, conact and email.",
+               text="Upon opening the app, you'll be prompted to set up your profile. Input your name, age, contact and email.",
                font=("Arial", 18,), bg="white", fg="black")
 text_2.grid(row=3, column=0, sticky="w", pady=5)
 
@@ -57,7 +57,7 @@ text_7 = Label(frame, text="Calendar View : ", font=("Arial", 20, "bold", "under
 text_7.grid(row=8, column=0, sticky="w")
 
 text_8 = Label(frame,
-               text="Navigate to the calendar view to see a monthly overview of your menstrual cycle. Period days are marked with a distinctive color, making it easy to track your flow.",
+               text="Navigate to the calendar view to see a monthly overview of your menstrual cycle., making it easy to track your flow.",
                font=("Arial", 18), bg="white", fg="black")
 text_8.grid(row=9, column=0, sticky="w", pady=5)
 
@@ -70,12 +70,12 @@ text_10 = Label(frame, text="Symptom & Mood Tracking: ", font=("Arial", 20, "bol
 text_10.grid(row=11, column=0, sticky="w")
 
 text_11 = Label(frame,
-                text="Keep track of your symptoms and moods throughout your cycle to identify patterns and understand your body better.Record symptoms like cramps, bloating, headaches, ",
+                text="Keep track of your symptoms and moods throughout your cycle to identify patterns and understand your body better.Record symptoms like cramps, headaches,or any other",
                 font=("Arial", 18), bg="white", fg="black")
 text_11.grid(row=12, column=0, sticky="w", pady=5)
 
 text_12 = Label(frame,
-                text="or any other physical experiences.Track moods like happiness, anxiety, irritability, and more, helping you manage emotional fluctuations effectively.",
+                text="physical experiences.Track moods like happiness, anxiety, irritability, and more, helping you manage emotional fluctuations effectively.",
                 font=("Arial", 18), bg="white", fg="black")
 text_12.grid(row=13, column=0, sticky="w", pady=5)
 
@@ -83,11 +83,11 @@ text_13 = Label(frame, text="Alerts & Reminders: ", font=("Arial", 20, "bold", "
 text_13.grid(row=14, column=0, sticky="w")
 
 text_14 = Label(frame,
-                text="Set notifications for the start of your period, fertile window, and any other events you'd like to remember.Never miss an important date with our customizable alerts and reminders.",
+                text="Set custom notifications according to your needs, and any other events you'd like to remember.Never miss an important date with our customizable alerts and reminders.",
                 font=("Arial", 18), bg="white", fg="black")
 text_14.grid(row=15, column=0, sticky="w", pady=5)
 
-text_15 = Label(frame, text="Alerts & Reminders: ", font=("Arial", 20, "bold", "underline"), bg="white", fg="black")
+text_15 = Label(frame, text="Insights and analysis: ", font=("Arial", 20, "bold", "underline"), bg="white", fg="black")
 text_15.grid(row=16, column=0, sticky="w")
 
 text_16 = Label(frame,
@@ -103,13 +103,7 @@ text_18 = Label(frame,
                 font=("Arial", 18), bg="white", fg="black")
 text_18.grid(row=19, column=0, sticky="w", pady=5)
 
-text_19 = Label(frame, text="Educational Resources : ", font=("Arial", 20, "bold", "underline"), bg="white", fg="black")
-text_19.grid(row=20, column=0, sticky="w")
 
-text_20 = Label(frame,
-                text="Explore comprehensive library of articles on women's health, menstrual hygiene, and overall well-being. ",
-                font=("Arial", 18), bg="white", fg="black")
-text_20.grid(row=21, column=0, sticky="w", pady=5)
 
 # Create a button and pack it into the main window
 button1 = Button(btn_frm, text="Our FAQ's", width=25, height=5, command=faq)
@@ -125,3 +119,4 @@ text_21 = Label(root,
 text_21.pack(side='bottom', ipady=20)
 
 root.mainloop()
+
