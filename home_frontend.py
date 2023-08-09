@@ -72,6 +72,10 @@ def create_reminder():
 def bmi():
     import bmicalculator as bmi
 
+# To go to do's and dont'S
+def dodont():
+    root.destroy()
+    import dos_donts
 
 # Function to go back to LogIn.
 def back():
@@ -253,7 +257,7 @@ menu_txt.configure(font=("Helvetica", 20, "bold"))
 bmicalc = Button(menuframe,text="BMI Calculator",command = bmi)
 bmicalc.configure(height=2, width=15)
 
-doanddont = Button(menuframe,text="Do's & Dont's")
+doanddont = Button(menuframe,text="Do's & Dont's", command=dodont)
 doanddont.configure(height=2, width=15)
 
 help = Button(menuframe,text="Help & Support", command=helpp)
