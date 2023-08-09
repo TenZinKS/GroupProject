@@ -13,8 +13,13 @@ root.geometry("%dx%d" % (width, height))
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
-# FRAMES
+def gohome():
+    root.destroy()
+    import home_frontend
 
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+# FRAMES
 # Scrollbar Frame
 scrollframe = Frame(root, bg='black')
 scrollframe.pack(side=RIGHT, fill=Y)
@@ -142,7 +147,7 @@ logo_label6.grid(row=3, column=3)
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
-home_btn = Button(yogaframe)
+home_btn = Button(yogaframe, command=gohome)
 home_btn.configure(height=2, width=10,bg='white', fg='black', text="Go Back", font=("Arial", 12, "bold"))
 home_btn.grid(row=4, column=3, pady=15, padx=15)
 
