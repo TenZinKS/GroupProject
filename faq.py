@@ -16,10 +16,10 @@ frame.pack(side="left",pady=5)
 text = Label(frame, text="Our FAQ's", font=("Helvetica", 30, "bold"), bg="white", fg="black")
 text.grid(row=1, column=0, sticky="w")
 
-text_1 = Label(frame, text="What is a period sathi, and why should I use one?", font=("Arial", 20, "bold"), bg="white", fg="black")
+text_1 = Label(frame, text="What is period sathi, and why should I use it?", font=("Arial", 20, "bold"), bg="white", fg="black")
 text_1.grid(row=2, column=0, sticky="w")
 
-text_2 = Label(frame, text="A period sathi is a app or tool that helps you monitor and record your menstrual cycle.It allows you to track the start and end dates of your periods, along with other symptoms and patterns ", font=("Arial", 17), bg="white", fg="black")
+text_2 = Label(frame, text="Period sathi is a app or tool that helps you monitor and record your menstrual cycle.It allows you to track the start and end dates of your periods, along with other symptoms and patterns ", font=("Arial", 17), bg="white", fg="black")
 text_2.grid(row=3, column=0, sticky="w")
 
 text_3 = Label(frame, text="Using a period tracker can be beneficial because it helps you predict your next period, understand your menstrual patterns, and even identify potential health concerns. ", font=("Arial", 17), bg="white", fg="black")
