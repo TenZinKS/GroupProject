@@ -76,20 +76,26 @@ def bmi():
 # Function to go back to LogIn.
 def back():
     root.destroy()
-    import loginpage as home
+    import loginpage
 
+# Function to go to help and support
 def helpp():
     root.destroy()
-    import help_and_support as gotohelp
+    import help_and_support
+
+# Function to go to workouts
+def stretch():
+    root.destroy()
+    import workout
 
 def setdate():
-    start_date = cal.get_date()  #Taking the entry from the entrywidget
-    date_obj = datetime.strptime(start_date, '%m/%d/%y') #Converting string into datetime object
-    end_date = date_obj + timedelta(days=4)  #Fixing the number of Period Days 
+    start_date = cal.get_date()  # Taking the entry from the entrywidget
+    date_obj = datetime.strptime(start_date, '%m/%d/%y') # Converting string into datetime object
+    end_date = date_obj + timedelta(days=4)  # Fixing the number of Period Days
     ovulation_start_date = date_obj + timedelta(days=10)
     ovulation_end_date = date_obj + timedelta(days=15)
 
-    period_end.config(text=f"Your period end date is: {end_date.date()}") #Using date function to represent only the date.
+    period_end.config(text=f"Your period end date is: {end_date.date()}") # Using date function to represent only the date.
     ovul_period.config(text=f"Your ovulation period is from: {ovulation_start_date.date()} to {ovulation_end_date.date()} ")
 
 # ------------------------------------------------------------------------------------------------------------------------------
@@ -245,27 +251,31 @@ menu_txt = Label(menuframe, text="MENU", bg='white', fg='black')
 menu_txt.configure(font=("Helvetica", 20, "bold"))
 
 bmicalc = Button(menuframe,text="BMI Calculator",command = bmi)
-bmicalc.configure(height=2, width=20)
+bmicalc.configure(height=2, width=15)
 
 doanddont = Button(menuframe,text="Do's & Dont's")
-doanddont.configure(height=2, width=20)
+doanddont.configure(height=2, width=15)
 
 help = Button(menuframe,text="Help & Support", command=helpp)
-help.configure(height=2, width=20)
+help.configure(height=2, width=15)
 
 remind = Button(menuframe,text="Create Reminder",command=create_reminder)
-remind.configure(height=2,width=20)
+remind.configure(height=2,width=15)
 
-gotologin = Button(menuframe, text="Login Menu", command=back)
-gotologin.configure(height=2, width=20)
+workouts = Button(menuframe, text="Workouts", command=stretch)
+workouts.configure(height=2,width=15)
+
+gotologin = Button(menuframe, text="Log Out", command=back)
+gotologin.configure(height=2, width=15)
 
 # Menu Placement
 menu_txt.pack(pady=40)
-remind.pack(pady=20)
-bmicalc.pack(pady=20)
-doanddont.pack(pady=20)
-help.pack(pady=20)
-gotologin.pack(pady=20)
+remind.pack(pady=10)
+bmicalc.pack(pady=10)
+doanddont.pack(pady=10)
+help.pack(pady=10)
+workouts.pack(pady=10)
+gotologin.pack(pady=10)
 
 # ------------------------------------------------------------------------------------------------------------------------------
 
