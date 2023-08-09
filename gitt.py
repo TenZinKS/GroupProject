@@ -40,7 +40,7 @@ text_2.grid(padx=260,row=7, column=0, sticky="w")
 text_2 = Label( text="Soyesh Shrestha :", font=("Arial", 20,"bold" ), bg="white", fg="black")
 text_2.grid(padx=260,row=8, column=0, sticky="w")
 
-text_2 = Label( text="soyeshxrestha@gmail.com ", font=("Arial", 15), bg="white", fg="black")
+text_2 = Label( text="soyeshxrestha@gmail.com, github.com/soyesh-1", font=("Arial", 15), bg="white", fg="black")
 text_2.grid(padx=260,row=9, column=0, sticky="w")
 
 img = Image.open("logo_slogan.png")
