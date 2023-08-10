@@ -1,11 +1,11 @@
 from tkinter import*
 from PIL import ImageTk,Image
-from tkinter import messagebox
 import sqlite3
+from tkinter import messagebox
 
 root = Tk()
 root.title("SignUp")
- 
+
 # Setting window geometry to full screen
 width= root.winfo_screenwidth()               
 height= root.winfo_screenheight()     
@@ -30,39 +30,43 @@ c = conn.cursor()
 
 def submit():
     fullname = name.get()
-    contact = cont.get()
-    age_value = age.get()
+    
+    try: 
+        contact = cont.get()
+        if contact.isdigit():
+            pass
+        else: 
+            raise Exception("Data Error","The contact number should be integer") 
+    except:
+        messagebox.showerror("Data Error","The contact number should be integer")
+
+    try: 
+        age_value = age.get()
+        if age_value.isdigit():
+            pass
+        raise Exception("Data Error","The age should be integer") 
+    except: 
+        messagebox.showerror("Data Error","The age should be integer")
+
     email = mail.get()
     password = pw.get()
-
-    if fullname == "":
-        messagebox.showerror("Name not entered, Try again")
-    elif contact == "":
-        messagebox.showerror("Contact not entered, Try again")
-    elif age_value == "":
-        messagebox.showerror("Age not entered, Try again")
-    elif email == "":
-        messagebox.showerror("Email not entered, Try again")
-    elif password == "":
-        messagebox.showerror("Password not entered, Try again")
-    else:
-
-        # Insert values into the database
-        c.execute("INSERT INTO users (Fullname, Contact, Age, Email, Password) VALUES (?, ?, ?, ?, ?)",
+    
+    # Insert values into the database
+    c.execute("INSERT INTO users (Fullname, Contact, Age, Email, Password) VALUES (?, ?, ?, ?, ?)",
                 (fullname, contact, age_value, email, password))
-        conn.commit()
-        conn.close()
+    conn.commit()
+    conn.close()
+   
 
-        # Clear the text boxes after pressing
-        name.delete(0,END)
-        cont.delete(0,END)
-        age.delete(0,END)
-        mail.delete(0,END)
-        pw.delete(0,END)
+    # Clear the text boxes after pressing
+    name.delete(0,END)
+    cont.delete(0,END)
+    age.delete(0,END)
+    mail.delete(0,END)
+    pw.delete(0,END)
 
-        root.destroy()
-        messagebox.showinfo("User Registered, Login to Enter.")
-        import loginpage as login
+    root.destroy()
+    import loginpage as login
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
