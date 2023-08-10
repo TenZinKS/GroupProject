@@ -1,10 +1,11 @@
 from tkinter import*
 from PIL import ImageTk,Image
+from tkinter import messagebox
 import sqlite3
 
 root = Tk()
 root.title("SignUp")
-
+ 
 # Setting window geometry to full screen
 width= root.winfo_screenwidth()               
 height= root.winfo_screenheight()     
@@ -34,21 +35,33 @@ def submit():
     email = mail.get()
     password = pw.get()
 
-    # Insert values into the database
-    c.execute("INSERT INTO users (Fullname, Contact, Age, Email, Password) VALUES (?, ?, ?, ?, ?)",
-              (fullname, contact, age_value, email, password))
-    conn.commit()
-    conn.close()
+    if fullname == "":
+        messagebox.showerror("Name not entered, Try again")
+    elif contact == "":
+        messagebox.showerror("Contact not entered, Try again")
+    elif age_value == "":
+        messagebox.showerror("Age not entered, Try again")
+    elif email == "":
+        messagebox.showerror("Email not entered, Try again")
+    elif password == "":
+        messagebox.showerror("Password not entered, Try again")
+    else:
 
-    # Clear the text boxes after pressing
-    name.delete(0,END)
-    cont.delete(0,END)
-    age.delete(0,END)
-    mail.delete(0,END)
-    pw.delete(0,END)
+        # Insert values into the database
+        c.execute("INSERT INTO users (Fullname, Contact, Age, Email, Password) VALUES (?, ?, ?, ?, ?)",
+                (fullname, contact, age_value, email, password))
+        conn.commit()
+        conn.close()
 
-    root.destroy()
-    import loginpage as login
+        # Clear the text boxes after pressing
+        name.delete(0,END)
+        cont.delete(0,END)
+        age.delete(0,END)
+        mail.delete(0,END)
+        pw.delete(0,END)
+
+        root.destroy()
+        import loginpage as login
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
