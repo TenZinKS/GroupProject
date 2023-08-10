@@ -61,6 +61,7 @@ def submit():
         pw.delete(0,END)
 
         root.destroy()
+        messagebox.showinfo("User Registered, Login to Enter.")
         import loginpage as login
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------
