@@ -5,23 +5,27 @@ from PIL import Image, ImageTk
 root=Tk()
 root.title("Update Password")
 root.configure(bg='white')
-root.geometry("500x500")
+root.geometry("700x500")
 
 # ------------------------------------------------------------------------------------------------------------
 
 def update():
-    # Connecting to the database and creating a cursor
-    conn = sqlite3.connect("signup.db")
-    c = conn.cursor()
+    try:
+        # Connecting to the database and creating a cursor
+        conn = sqlite3.connect("signup.db")
+        c = conn.cursor()
 
-    c.execute("""UPDATE users SET Password = :new_pw WHERE email = :myemail""",
-    {'new_pw':new_pw_entry.get(), 'myemail':mail_entry.get()
-    }
-    )
+        c.execute("""UPDATE users SET Password = :new_pw WHERE email = :myemail""",
+                  {'new_pw': new_pw_entry.get(), 'myemail': mail_entry.get()}
+        )
 
-    # Committing and closing the database
-    conn.commit()
-    conn.close()
+        # Committing and closing the database
+        conn.commit()
+    except sqlite3.Error as e:
+        print("An error occurred:", e)
+    finally:
+        if conn:
+            conn.close()
 
     success = Label(root, text="Password updated successfully!\n You can close this window")
     success.configure(bg='white', fg='black', font=("AppleGothic",12))
@@ -71,5 +75,11 @@ new_pw_entry.grid(row=2, column=1, pady=5)
 update_btn = Button(root, command=update)
 update_btn.configure(bg='white', fg='black', text='Update Password', font=("AppleGothic",14,"bold"))
 update_btn.grid(row=3, column=1, pady=10)
+
+pic_img = Image.open("logo_slogan.png")
+resized = pic_img.resize((400, 250),Image.LANCZOS)
+new_logo = ImageTk.PhotoImage(resized)
+logo_label = Label(photoframe,image=new_logo, bd=0)
+logo_label.pack(side='bottom')
 
 root.mainloop()
