@@ -139,7 +139,7 @@ new_logo5 = ImageTk.PhotoImage(resized5)
 logo_label5 = Label(yogaframe,image=new_logo5)
 logo_label5.grid(row=3, column=2)
 
-fishimg = Image.open("fishp.png")
+fishimg = Image.open("catp.png")
 resized6 = fishimg.resize((300,200),Image.LANCZOS)
 new_logo6 = ImageTk.PhotoImage(resized6)
 logo_label6 = Label(yogaframe,image=new_logo6)
