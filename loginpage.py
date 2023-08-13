@@ -104,7 +104,7 @@ wlcm.grid(row=0,column=1, pady=70)
 
 # USERNAME
 usrnm = Entry(login_frame)
-usrnm.configure(width=40, bg="white", fg="grey", font=('AppleGothic', 15), bd=0)
+usrnm.configure(width=40, bg="white", fg="grey", font=('AppleGothic', 15))
 usrnm.insert(INSERT, "Username/ email")
 usrnm.grid(row=1, column=1, pady=10, ipady=10)
 
@@ -125,7 +125,7 @@ remember.grid(row=4, column=0)
 
 # Forget Button
 forgotbutton = Button(login_frame)
-forgotbutton.configure(text="Forgot Password?", bd=0, bg='white',activebackground='white', cursor='hand2', font=('AppleGothic', 12, 'bold'), command=update_pw)
+forgotbutton.configure(text="Forgot Password?", bg='white',activebackground='white', cursor='hand2', font=('AppleGothic', 12, 'bold'), command=update_pw)
 forgotbutton.grid(row=4, column=1, pady=15)
 
 
@@ -135,12 +135,12 @@ forgotbutton.grid(row=4, column=1, pady=15)
 
 # LOGIN BUTTON
 login_btn = Button(login_frame)
-login_btn.configure(height=1,width=10, text="LogIn", font=("AppleGothic", 20, "bold"),bg='white', fg="#AE239F",bd=0, command=goin)
+login_btn.configure(height=1,width=10, text="LogIn", font=("AppleGothic", 20, "bold"),bg='white', fg="#AE239F", command=goin)
 login_btn.grid(row=5, column=1, pady=30)
 
 # SIGNUP BUTTON
 sgnup_btn = Button(login_frame)
-sgnup_btn.configure(height=1,width=10, text="SignUp", font=("AppleGothic", 20, "bold"),bg='white', fg="#AE239F",bd=0, command=signpress)
+sgnup_btn.configure(height=1,width=10, text="SignUp", font=("AppleGothic", 20, "bold"),bg='white', fg="#AE239F", command=signpress)
 sgnup_btn.grid(row=6, column=1, pady=20)
 # --------------------------------------------------------------------------------------------------------------------------------------------------
 
