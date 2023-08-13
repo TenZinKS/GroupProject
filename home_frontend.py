@@ -70,6 +70,7 @@ def create_reminder():
 
 #BMI Function
 def bmi():
+    root.destroy()
     import bmicalculator as bmi
 
 # Function to go back to LogIn.
@@ -79,7 +80,6 @@ def back():
 
 # Function to go to help and support
 def helpp():
-    root.destroy()
     import help_and_support
 
 # Function to go to workouts
