@@ -30,24 +30,8 @@ c = conn.cursor()
 
 def submit():
     fullname = name.get()
-    
-    try: 
-        contact = cont.get()
-        if contact.isdigit():
-            pass
-        else: 
-            raise Exception("Data Error","The contact number should be integer") 
-    except:
-        messagebox.showerror("Data Error","The contact number should be integer")
-
-    try: 
-        age_value = age.get()
-        if age_value.isdigit():
-            pass
-        raise Exception("Data Error","The age should be integer") 
-    except: 
-        messagebox.showerror("Data Error","The age should be integer")
-
+    contact = cont.get()
+    age_value = age.get()
     email = mail.get()
     password = pw.get()
     
