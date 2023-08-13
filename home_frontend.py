@@ -28,7 +28,7 @@ def get_selected_row(event):
     # of the listbox, starting from 0. We also have indexed to just get the first item.
 
     selected_tuple=history_list.get(index) 
-    period_start.config(text="Period Started:"+ selected_tuple[0]) 
+    period_start.config(text="Date:"+ selected_tuple[0]) 
     clickspotting.set(selected_tuple[1])
     clickfluid.set(selected_tuple[2])
     clicksex.set(selected_tuple[3])
