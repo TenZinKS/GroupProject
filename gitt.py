@@ -13,7 +13,7 @@ root.geometry(f"800x600")
 #Function to go back
 def goback():
     root.destroy()
-    import help_and_support as help
+    import home_frontend
 
 # TEXT
 text = Label( text="OUR DEVELOPERS", font=("Comic sans", 32, "bold"), bg="white", fg="black")
