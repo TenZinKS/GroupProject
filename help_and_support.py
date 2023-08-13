@@ -13,12 +13,16 @@ root.geometry("%dx%d" % (width, height))
 
 
 def faq():
-    import faq as openfaq
+    import faq
 
 
 def gett():
     root.destroy()
-    import gitt as letsgo
+    import gitt
+
+def returntohome():
+    root.destroy()
+    import home_frontend
 
 
 
@@ -112,6 +116,9 @@ button1.pack(side='left')
 # Create a button and pack it into the main window
 button2 = Button(btn_frm, text="Get in touch", width=25, height=5, command=gett)
 button2.pack(side='right', anchor='w',  pady=20)
+
+button3 = Button(btn_frm, text="Return To Homepage", width=25, height=5, command=returntohome)
+button3.pack(anchor='w',  pady=20)
 
 text_21 = Label(root,
                 text="Remember, every individual's body is unique, and if you have specific concerns or questions about your health,\n it's essential to seek advice from a healthcare professional who can provide personalized guidance and support.",
